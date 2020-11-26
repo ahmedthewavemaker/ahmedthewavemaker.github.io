@@ -7,23 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header id="home">
         <h1>Zoo Finder</h1>
         <p>Bringing Zoos to you</p>
-        <nav class="hidden">Home</nav>
     </header>
+    <div>
+        
+        <input type="button" id="back-button" name="back-button" for="nav" class="hidden" value="Home">
+    </div>
     <div>
         <form id="js-form">
             <label for="city-state"></label>
             <input id="city-state" type="text" name="city-state">
             <input type="submit" value="Adventure time!">
         </form>
+    </div>
+    <div>
 
         <section id="js-display" class="hidden">
             <h2>Nearest Zoos</h2>
-            <div class="results"></div>
+            <ul id="results"></ul>
         </section>
-
+        <section id="details">
+            
+        </section>
     </div>
     <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
