@@ -34,6 +34,31 @@ function getLink(input) {
         });
     }
 
+
+function randomizeImage(){
+    let lastIndex = 0;
+    let theImage = document.getElementById('myimage');
+				let imgDir = 'images/';
+				let imgArray = new Array('croc.jpg','lion.jpg','elephant.jpg','gorilla.jpg','hippo.jpg', 'panda.jpg', 'rhino.jpg', 'tiger.jpg', 'zebra.jpg');
+				let imgIndex = 0;
+				
+				if(imgArray.length > 1) {
+					while(imgIndex == lastIndex) {
+						imgIndex = Math.floor(Math.random() * imgArray.length);
+					}
+					lastIndex = imgIndex;
+				
+					let imgPath = imgDir + imgArray[imgIndex];
+					
+					theImage.src = imgPath;
+					theImage.alt = imgArray[imgIndex];
+				}
+				else {
+					return false;
+				}
+			}
+
+
 function getDetails(venueId){
     const params = {
         client_id: clientId,
@@ -54,12 +79,14 @@ function getDetails(venueId){
         });
 }
 
+//displays the details of the results that link to other sites/displays
 function displayDetails(responseJson){
     console.log(responseJson);
+    
     $('#details').html(`
     ${responseJson.response.venue.name}<br>
-    ${responseJson.response.venue.bestPhoto}
-    ${responseJson.response.venue.url}
+    <a href="${responseJson.response.venue.canonicalUrl}">Learn More!</a><br>
+    <a href="${responseJson.response.venue.url}">${responseJson.response.venue.url}</a>
     `)
 
 }
