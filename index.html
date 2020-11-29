@@ -1,1 +1,41 @@
-API-capstone
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="home">
+        <h1>Zoo Finder</h1>
+        <p>Bringing Zoos to you</p>
+    </header>
+    <div>
+        
+        <input type="button" id="back-button" name="back-button" for="nav" class="hidden" value="Home">
+    </div>
+    <div>
+        <form id="js-form">
+            <label for="city-state"></label>
+            <input id="city-state" type="text" name="city-state" placeholder="Enter City, State">
+            <input type="submit" value="Adventure time!">
+        </form>
+    </div>
+    <div>
+
+        <section id="js-display" class="hidden">
+            <h2>Nearest Zoos</h2>
+            <ul id="results" ></ul>
+        </section>
+        <section id="details">
+
+        </section>
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
