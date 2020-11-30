@@ -3,7 +3,167 @@
     box-sizing: border-box;
 }
 
+
+body, html{
+    height: 100%;
+    
+}
 .hidden{
     display: none;
+}
+
+.detailsedit{
+    display: flex;
+    flex-direction: column;
+
+}
+
+body{
+    font-size: 20px;
+    font-family: 'Caesar Dressing', cursive;
+    margin: 0px;
+}
+
+.background{
+    background-image: url(images/lion.jpg);
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center ;
+    height: 100%;
+    margin: 0px;
+    overflow-x: hidden; 
+    overflow-y: auto;
+    width: 100vw;
+}
+
+
+form{
+    font-family: 'Caesar Dressing', cursive;
+    margin-left: 160px;
+}
+
+section{
+    font-family: 'Caesar Dressing', cursive;
+}
+
+button{
+    font-family: 'Caesar Dressing', cursive;
+}
+
+input{
+    font-family: 'Caesar Dressing', cursive;
+}
+
+header{
+    flex-direction: column;
+  
+}
+
+h1{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-size: 40px;
+    
+}
+
+p{
+    margin-top: 0px;
+}
+
+.homeDiv{
+    margin-left: 160px;
+    justify-content: center;
+}
+
+.nicelook{
+    font-size: 35px;
+    margin-top: 40px;
+}
+
+
+
+
+
+
+
+
+@media all and (min-width: 600px){
+    html{
+        height: 100%;
+    }
+   body{ font-size: 20px;
+    font-family: 'Caesar Dressing', cursive;
+    flex-direction: row;
+    height: 100%;
+    margin: 0px;
+   }
+
+   .hidden{
+       display: none;
+   }
+   .homeDiv{
+       margin-left: 480px;
+       padding-top: 0px;
+   }
+
+   .detailsedit{
+       display: flex;
+       flex-direction: row;
+   }
+
+   h1{
+       font-size: 80px;
+      
+   }
+   p{
+       padding-bottom: 0px;
+       margin-top: 0px;
+       padding-left: 90px;
+      
+   }
+   header{
+       padding-top: 50px;
+       padding-bottom: 0px;
+       margin-top: 100px;
+       align-content: flex-start;
+   }
+
+   form{
+       margin-left: 480px;
+       padding-left: 70px;
+   }
+
+   .nicelook{
+       font-size: 50px;
+       margin-top: 90px
+   }
+
+   h2{
+       color: gold;
+       padding-left: 25px;
+       font-size: 45px;
+       margin-top: 85px;
+   }
+  button{
+      font-size: 20px;
+  }
+
+  #back-button{
+      margin-left: 22px;
+      margin-top: 22px;
+      font-size: 40px;
+  }
+   
+   .background{
+    background-image: url(images/lion.jpg);
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center ;
+    height: 100%;
+    margin: 0px;
+    overflow-x: hidden; 
+    overflow-y: auto;
+    width: 100vw;   
+}
 }
 

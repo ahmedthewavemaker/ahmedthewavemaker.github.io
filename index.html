@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zoo Finder</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header id="home">
+<div class="background">
+    
+    <header id="home" class="homeDiv">
         <h1>Zoo Finder</h1>
         <p>Bringing Zoos to you</p>
     </header>
     <div>
-        
+
         <input type="button" id="back-button" name="back-button" for="nav" class="hidden" value="Home">
     </div>
     <div>
@@ -22,20 +28,22 @@
             <input type="submit" value="Adventure time!">
         </form>
     </div>
-    <div>
+    <div class="detailsedit">
 
         <section id="js-display" class="hidden">
             <h2>Nearest Zoos</h2>
-            <ul id="results" ></ul>
+            <ul id="results"></ul>
         </section>
-        <section id="details">
+
+        <section id="details" class="nicelook">
 
         </section>
     </div>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

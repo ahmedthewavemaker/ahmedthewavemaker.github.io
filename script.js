@@ -1,7 +1,7 @@
 'use strict'
 
-const clientId = "AXCPQVD13O0HH0XFPJHMILOP20NEQQ5KL4VT50OCUNSTNLLT";
-const clientSecret = "0PYTJCICPFPARITIUQHRR2KOUW34DLQGVPA1JXWXI5R2EGSM";
+const clientId = "MHUNL1WL0WB5LTESOLGTCOC0DJS0X1AXQC12I1KOQ3JLIDHU";
+const clientSecret = "HUMXM211TTXEJDANWIFG1NT2RG1LDFSTVDRUB25TLWMJD30Z";
 const baseUrl = "https://api.foursquare.com/v2/venues/search";
 
 
@@ -30,9 +30,13 @@ function getLink(input) {
         .then(responseJson => displayResults(responseJson))
         .catch(error => {
             console.error('Something is wrong!');
-            console.error(error)
+            console.error(error);
+            $('#details').append('Sorry, something went wrong, try again later.')
         });
     }
+
+
+
 
 
 function getDetails(venueId){
@@ -51,7 +55,8 @@ function getDetails(venueId){
         .then(responseJson => displayDetails(responseJson))
         .catch(error => {
             console.error('Something is wrong!');
-            console.error(error)
+            console.error(error);
+            $('#details').append('Sorry, there are no zoos in your city.')
         });
 }
 
@@ -62,7 +67,7 @@ function displayDetails(responseJson){
     $('#details').html(`
     ${responseJson.response.venue.name}<br>
     <a href="${responseJson.response.venue.canonicalUrl}">Learn More!</a><br>
-    <a href="${responseJson.response.venue.url}">${responseJson.response.venue.url}</a>
+    <a href="${responseJson.response.venue.url}">${responseJson.response.venue.url}</a><br>    
     `)
 
 }
@@ -74,14 +79,20 @@ function displayResults(responseJson) {
     console.log(responseJson);
     $('#results').empty();
 
+    $('#js-display, #back-button, #details').removeClass('hidden');
+    $('#home, #js-form').addClass('hidden');
+
+    if(responseJson.meta.code===400){
+        $('#results').append('Sorry, something went wrong.')
+        return 
+    }
     for (let i = 0; i < responseJson.response.venues.length; i++) {
         $('#results').append(`<li><h3><button onClick="getDetails('${responseJson.response.venues[i].id}')">
         ${responseJson.response.venues[i].name}</button></h3></li>`)
         console.log(responseJson.response.venues[i].url);
     }
 
-    $('#js-display, #back-button').removeClass('hidden');
-    $('#home, #js-form').addClass('hidden');
+   
 
 }
 
@@ -89,10 +100,11 @@ function homeButton() {
     $('#back-button').click(e => {
         e.preventDefault();
 
-        $('#js-display, #back-button').addClass('hidden');
+        $('#js-display, #back-button, #details').addClass('hidden');
         $('#home, #js-form').removeClass('hidden');
     })
 }
+
 
 
 
