@@ -56,7 +56,7 @@ function getDetails(venueId){
         .catch(error => {
             console.error('Something is wrong!');
             console.error(error);
-            $('#details').append('Sorry, there are no zoos in your city.')
+            $('#details').html('Sorry, there are no zoos in your city.')
         });
 }
 
@@ -100,7 +100,7 @@ function homeButton() {
     $('#back-button').click(e => {
         e.preventDefault();
 
-        $('#js-display, #back-button, #details').addClass('hidden');
+        $('#js-display, #back-button, #details, nicelook').addClass('hidden');
         $('#home, #js-form').removeClass('hidden');
     })
 }
