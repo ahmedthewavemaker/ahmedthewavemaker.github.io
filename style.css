@@ -25,7 +25,7 @@ body{
 }
 
 .background{
-    background-image: url(images/lion.jpg);
+    background-image: url(lion.jpg);
     background-size: cover ;
     background-repeat: no-repeat;
     background-position: center ;
@@ -287,7 +287,7 @@ p{
   }
    
    .background{
-    background-image: url(images/lion.jpg);
+    background-image: url(lion.jpg);
     background-size: cover ;
     background-repeat: no-repeat;
     background-position: center ;
