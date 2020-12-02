@@ -37,7 +37,7 @@ function getLink(input) {
 
 
 
-
+//Uses a second endpoint to prepare the details of our results to get displayed and makres the Url based on parameters
 
 function getDetails(venueId){
     const params = {
@@ -99,6 +99,7 @@ function displayResults(responseJson) {
 
 }
 
+//home button to take you back to the first page where you can enter a new city
 function homeButton() {
     $('#back-button').click(e => {
         e.preventDefault();
