@@ -101,6 +101,7 @@ section, h2{
    padding: 10px 10px;
    text-decoration: none;
    border-radius: 10px;
+   word-wrap: break-word;
 }
 
 a:link{
@@ -141,7 +142,7 @@ p{
 }
 
 .nicelook{
-    font-size: 35px;
+    font-size: 23px;
     margin-top: 40px;
 }
 
@@ -240,8 +241,8 @@ p{
        border-radius: 15px;
        margin-right: 30px;
        color: green;
-       position: fixed;
-       left: 30%;
+       
+       
       
    }
 

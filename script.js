@@ -63,12 +63,14 @@ function getDetails(venueId){
 //displays the details of the results that link to other sites/displays
 function displayDetails(responseJson){
     console.log(responseJson);
+
     
     $('#details').html(`
     ${responseJson.response.venue.name}<br>
     <a href="${responseJson.response.venue.canonicalUrl}">Learn More!</a><br>
     <a href="${responseJson.response.venue.url}">${responseJson.response.venue.url}</a><br>    
     `)
+    
 
 }
 
@@ -78,6 +80,7 @@ function displayDetails(responseJson){
 function displayResults(responseJson) {
     console.log(responseJson);
     $('#results').empty();
+    $('#details').empty();
 
     $('#js-display, #back-button, #details').removeClass('hidden');
     $('#home, #js-form').addClass('hidden');
@@ -87,8 +90,8 @@ function displayResults(responseJson) {
         return 
     }
     for (let i = 0; i < responseJson.response.venues.length; i++) {
-        $('#results').append(`<li><h3><button onClick="getDetails('${responseJson.response.venues[i].id}')">
-        ${responseJson.response.venues[i].name}</button></h3></li>`)
+        $('#results').append(`<li><h3><a href="#details"><button onClick="getDetails('${responseJson.response.venues[i].id}')" >
+        ${responseJson.response.venues[i].name}</button></a></h3></li>`)
         console.log(responseJson.response.venues[i].url);
     }
 
@@ -103,6 +106,7 @@ function homeButton() {
         $('#js-display, #back-button, #details, nicelook').addClass('hidden');
         $('#home, #js-form').removeClass('hidden');
     })
+  
 }
 
 
